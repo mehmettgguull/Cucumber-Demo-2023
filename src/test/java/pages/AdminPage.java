@@ -8,7 +8,7 @@ import utilities.Driver;
 public class AdminPage extends Base {
     @FindBy(xpath = "//a[@class='btn btn-lg btn-admin']")
     public  WebElement adminLoginButton;
-    @FindBy(id= "//input[@id='form-username']")
+    @FindBy(xpath= "//input[@id='form-username']")
     public  WebElement adminUser;
     @FindBy(xpath = "//input[@placeholder='Password']")
     public  WebElement adminPassword;
@@ -135,5 +135,47 @@ public class AdminPage extends Base {
     public WebElement copmlaintDeleteButton;
     @FindBy(xpath = "//*[text()='Record Delete Successfully']")
     public WebElement complaintDeleteCheckAlert;
+
+
+    // Admin Student Information --> Multi Class Student
+    @FindBy (xpath = "//span[text()='Student Information']")
+    public WebElement studentInformation;
+
+    @FindBy (xpath = "(//a[@href=\"https://qa.wonderworldcollege.com/student/multiclass\"])[2]")
+    public WebElement multiClassStudentLink;
+
+    @FindBy (xpath = "//h3[@class='box-title']")
+    public WebElement multiClassStudentselectCriteriaText;
+
+    @FindBy (id = "class_id")
+    public WebElement multiClassStudentClassTexbox;
+
+    @FindBy (id = "section_id")
+    public WebElement multiClassStudentSectionTexbox;
+
+    @FindBy (xpath = "(//button[@type='submit'])[3]")
+    public WebElement multiClassStudentSearchButton;
+
+    @FindBy (xpath = "(//h3[@class='box-title'])[2]")
+    public WebElement multiClassStudentselectCriteriaText2;
+
+    @FindBy (xpath = "(//button[@class='btn btn-default btn-sm pull-right addrow addrow-mb2010'])[1]")
+    public WebElement multiClassStudentAddButton;
+
+    @FindBy (xpath = "(//select[@name='class_id_2'])[1]")
+    public WebElement multiClassStudentClassTexbox2;
+
+    @FindBy (xpath = "(//select[@name='section_id_2'])[1]")
+    public WebElement multiClassStudentSectionTexbox2;
+
+    @FindBy (xpath = "(//button[@type='submit'])[4]")
+    public WebElement multiClassStudentUpdateButton;
+
+    @FindBy(xpath = "(//button[@class='btn btn-sm btn-danger rmv_row'])[3]")
+    public WebElement multiClassStudentRemoveButton;
+
+
+
+
 
 }
