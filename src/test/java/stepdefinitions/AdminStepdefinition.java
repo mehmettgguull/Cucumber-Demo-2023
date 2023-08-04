@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import pages.AdminPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class AdminStepdefinition {
     AdminPage adminPage =new AdminPage();
@@ -295,6 +296,92 @@ public class AdminStepdefinition {
     @Given("Check that the complaint has been deleted")
     public void check_that_the_complaint_has_been_deleted() {
         Assert.assertTrue(adminPage.complaintDeleteCheckAlert.isDisplayed());
+    }
+
+    @Given("click admin login")
+    public void click_admin_login() {
+        adminPage.adminLoginButton.click();
+
+        ReusableMethods.switchToWindow("Login : Wonder World College");
+    }
+
+    @Given("Enter the valid username and password on the Admin login panel")
+    public void enter_the_valid_username_and_password_on_the_admin_login_panel() {
+
+        adminPage.adminUser.sendKeys(ConfigReader.getProperty("sumeyraAdminUsername"));
+        adminPage.adminPassword.sendKeys(ConfigReader.getProperty("sumeyraPassword"));
+    }
+
+    @Given("click sign in button")
+    public void click_sign_in_button() {
+
+        ReusableMethods.waitForVisibility(adminPage.signInButton, 1);
+        adminPage.signInButton.click();
+
+    }
+
+    @Given("Student Information, Multi Class Student link is clicked on the admin panel, respectively")
+    public void student_information_multi_class_student_link_is_clicked_on_the_admin_panel_respectively() {
+
+        adminPage.studentInformation.click();
+        ReusableMethods.bekle(1);
+        adminPage.multiClassStudentLink.click();
+    }
+
+    @Given("Select the class from the Class tab, select the section from the Section tab and click the search button")
+    public void select_the_class_from_the_class_tab_select_the_section_from_the_section_tab_and_click_the_search_button() {
+
+        Select select = new Select(adminPage.multiClassStudentClassTexbox);
+        select.selectByIndex(3);
+        ReusableMethods.bekle(2);
+
+        select = new Select(adminPage.multiClassStudentSectionTexbox);
+        select.selectByIndex(1);
+        ReusableMethods.bekle(2);
+
+        adminPage.multiClassStudentSearchButton.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Given("A new class is added by clicking the + icon in the selected student's window")
+    public void a_new_class_is_added_by_clicking_the_icon_in_the_selected_student_s_window() {
+
+        adminPage.multiClassStudentAddButton.click();
+        ReusableMethods.bekle(1);
+
+        Select select = new Select(adminPage.multiClassStudentClassTexbox2);
+        select.selectByIndex(2);
+        ReusableMethods.bekle(1);
+
+        select = new Select(adminPage.multiClassStudentSectionTexbox2);
+        select.selectByIndex(3);
+        ReusableMethods.bekle(1);
+    }
+
+    @Given("Clicking the Update button saves the changes made")
+    public void clicking_the_update_button_saves_the_changes_made() {
+
+        adminPage.multiClassStudentUpdateButton.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Given("Click the remove button of the class you want to delete in the selected student's window")
+    public void click_the_remove_button_of_the_class_you_want_to_delete_in_the_selected_student_s_window() {
+
+        adminPage.multiClassStudentRemoveButton.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Given("Quit the page")
+    public void quit_the_page() {
+        Driver.quitDriver();
+    }
+
+    @Given("Go to the {string}")
+    public void go_to_the_url(String Url) {
+
+        Driver.getDriver().get(ConfigReader.getProperty(Url));
+        ReusableMethods.bekle(1);
     }
 
 }

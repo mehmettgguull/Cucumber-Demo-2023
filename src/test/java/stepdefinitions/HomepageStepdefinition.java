@@ -262,6 +262,92 @@ HomePage homePage=new HomePage();
 
     }
 
+    @Given("Click the course menu title")
+    public void click_the_course_menu_title() {
+
+        homePage.coursePage.click();
+    }
+
+    @Given("Clicking the Details button of the course validated that it can access the detail page.")
+    public void clicking_the_details_button_of_the_course_validated_that_it_can_access_the_detail_page() throws InterruptedException {
+
+        String actualTitle;
+        String expectedTitle;
+
+        homePage.coursePageEnglishAndLiteratureDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "English and Literature";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+        Thread.sleep(500);
+
+        homePage.coursePageMathematicsDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Mathematics";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+        Thread.sleep(500);
+
+        homePage.coursePageSciencesDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Sciences";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+
+        homePage.coursePageSocialSciencesDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Social Sciences";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+
+        homePage.coursePageHistoryDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "History";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+
+        homePage.coursePageArtsAndMusicDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Arts and Music";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+
+        homePage.coursePageHealthAndExerciseSciencesDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Health and Exercise Sciences";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+
+        homePage.coursePageForeignLanguageDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Foreign Language";
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+        Driver.getDriver().navigate().back();
+
+        homePage.coursePageComputerScienceDetailsButton.click();
+        Thread.sleep(1000);
+        actualTitle = Driver.getDriver().getTitle();
+        expectedTitle = "Computer Science";
+        Assert.assertEquals(expectedTitle, actualTitle);
+    }
+
+
 
 
 }
