@@ -320,8 +320,7 @@ public class HomePage  extends Base {
 
         onlineAdmissionPageEmail.sendKeys(eMail);
 
-        String dosyaYolu = "C:\\Users\\ogune\\OneDrive\\Desktop\\BOOTCAMP\\com.wonderworldcollege" +
-                "\\src\\test\\java\\.jpg\\4432b9bcacc2ed45b9bef8d8475a6030.jpg";
+        String dosyaYolu = "C:\\Users\\mhmtc\\IdeaProjects\\Proje2\\src\\test\\java\\.jpg\\4432b9bcacc2ed45b9bef8d8475a6030.jpg";
         onlineAdmissionPageStudentPhoto.sendKeys(dosyaYolu);
     }
     //verifies that student photo has been uploaded
@@ -396,8 +395,7 @@ public class HomePage  extends Base {
         guardianPhoneOnlineAdmissionPage.sendKeys("01234 56 789");
         guardianOccupationOnlineAdmissionPage.sendKeys("Big Boss");
         guardianAdressOnlineAdmissionPage.sendKeys("Bochum, Germany");
-        String dosyaYolu = "C:\\Users\\ogune\\OneDrive\\Desktop\\BOOTCAMP\\" +
-                "com.wonderworldcollege\\src\\test\\java\\.jpg\\IMG_20211022_124748.jpg";
+        String dosyaYolu = "C:\\Users\\mhmtc\\IdeaProjects\\Proje2\\src\\test\\java\\.jpg\\IMG_20211022_124748.jpg";
         guardianPhotoOnlineAdmissionPage.sendKeys(dosyaYolu);
         ReusableMethods.bekle(5);
     }
@@ -427,8 +425,7 @@ public class HomePage  extends Base {
     }
     //Uploads Document and verifies that the Document has been uploaded
     public void uploadVerifyDocumentOnlineAdmissionPage(){
-        String dosyaYolu = "C:\\Users\\ogune\\OneDrive\\Desktop\\BOOTCAMP\\" +
-                "com.wonderworldcollege\\src\\test\\java\\.jpg\\Student.txt";
+        String dosyaYolu = "C:\\Users\\mhmtc\\IdeaProjects\\Proje2\\src\\test\\java\\.jpg\\Student.txt";
         uploadDocumentOnlineAdmissionPage.sendKeys(dosyaYolu);
         ReusableMethods.bekle(2);
         actions.moveToElement(uploadDocumentOnlineAdmissionPage).perform();
