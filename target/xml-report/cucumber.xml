@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.173" tests="2" skipped="0" failures="1" errors="0">
+<testcase classname="admin school fees" name="TC01 school fees test" time="0.021">
+<failure/>
+<system-out><![CDATA[
+* Go to "loginurl"..........................................................passed
+* click admin Login.........................................................undefined
+* enter username............................................................skipped
+* enter password............................................................skipped
+* click sign in button......................................................skipped
+* Click fees collection.....................................................skipped
+* verif that the fees master displayed......................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="homepageSlider" name="TC01 homePage slider pictures test" time="0.003">
+<system-out><![CDATA[
+Given User goes to wonderworldcollege homepage..............................passed
+Then wait 10 seconds........................................................passed
+Then user test if the images change at regular intervals....................passed
+And user close the browser..................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
