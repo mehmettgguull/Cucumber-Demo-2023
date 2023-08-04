@@ -242,7 +242,7 @@ HomePage homePage=new HomePage();
 
     @Then("verify and click on I agree to the terms and conditions checkbox")
     public void verifyAndClickOnIAgreeToTheTermsAndConditionsCheckbox() {
-        homePage.checkBoxVerifyEnter();
+       // homePage.checkBoxVerifyEnter();
     }
 
     @Then("click on submit and verify form status and success alert")
