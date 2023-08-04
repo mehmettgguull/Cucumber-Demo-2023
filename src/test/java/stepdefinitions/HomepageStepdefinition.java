@@ -1,5 +1,7 @@
 package stepdefinitions;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
@@ -158,6 +160,106 @@ HomePage homePage=new HomePage();
     @Given("user close the browser")
     public void user_close_the_browser() {
        Driver.quitDriver();
+    }
+
+    @Then("click on online admission title")
+    public void clickOnOnlineAdmissionTitle() {
+        homePage.clickOnlineAdmissionHomePage();
+    }
+
+    @Then("verify online admission page")
+    public void verifyOnlineAdmissionPage() {
+        homePage.verifyOnlineAdmissionPage();
+    }
+
+    @Then("verify that school admission criteria text")
+    public void verifyThatSchoolAdmissionCriteriaText() {
+        homePage.verifySchoolAdmissionCriteria();
+    }
+
+    @Then("verify and fill the fields under Basic Details")
+    public void verifyAndFillTheFieldsUnderBasicDetails() {
+        homePage.enterVerifyBasicDetails();
+    }
+
+    @Then("verify that student photo has been uploaded")
+    public void verifyThatStudentPhotoHasBeenUploaded() {
+        homePage.verifyUploadStudentPhoto();
+    }
+
+    @Then("verify and fill the fields under Parent Details")
+    public void verifyAndFillTheFieldsUnderParentDetails() {
+        homePage.verifyEnterDataParentDetails();
+    }
+
+    @Then("verify mandatory fields under Basic Details and Guardian Details section")
+    public void verifyMandatoryFieldsUnderBasicDetailsAndGuardianDetailsSection() {
+        homePage.verifyMandatoryFieldsBasicDetailsParentDetails();
+    }
+
+
+
+    @Then("verify and fill the fields under Guardian Details Section")
+    public void verifyAndFillTheFieldsUnderGuardianDetailsSection() {
+        homePage.verifyEnterGuardianDetailsOnlineAdmissionPage();
+    }
+
+    @Then("verify that guardian photo has been uploaded")
+    public void verifyThatGuardianPhotoHasBeenUploaded() {
+        homePage.verifyGuardianPhotoUpload();
+    }
+
+    @Then("verify RadioBoxes under Guardian Details Section")
+    public void verifyRadioBoxesUnderGuardianDetailsSection() {
+        homePage.verifyRadioBoxesGuardianDetails();
+    }
+
+    @Then("verify and fill the fields under Miscellaneous Details")
+    public void verifyAndFillTheFieldsUnderMiscellaneousDetails() {
+        homePage.miscellaneousDetailsVerifyEnter();
+    }
+
+    @Then("upload a document on Upload Document Section and verify that")
+    public void uploadADocumentOnUploadDocumentSectionAndVerifyThat() {
+        homePage.uploadVerifyDocumentOnlineAdmissionPage();
+    }
+
+
+    @Then("click on Submit and verify Reference Number and Review entered Details and Status Page")
+    public void clickOnSubmitAndVerifyReferenceNumberAndReviewEnteredDetailsAndStatusPage() {
+        homePage.verifyREDaS_ReferenceNo();
+    }
+
+    @Then("verify form status and application Date")
+    public void verifyFormStatusAndApplicationDate() {
+        homePage.verifyFormStatusAndApplicationDate();
+    }
+
+    @Then("verifiy entered informations")
+    public void verifiyEnteredInformations() {
+        homePage.controlInformations();
+    }
+
+    @Then("verify and click on I agree to the terms and conditions checkbox")
+    public void verifyAndClickOnIAgreeToTheTermsAndConditionsCheckbox() {
+        homePage.checkBoxVerifyEnter();
+    }
+
+    @Then("click on submit and verify form status and success alert")
+    public void clickOnSubmitAndVerifyFormStatusAndSuccessAlert() {
+        homePage.submitVerifyFormStatusAndAlert();
+    }
+
+    @And("Close the page.")
+    public void close_the_page() {
+        Driver.quitDriver();
+
+    }
+
+    @Given("go to home page")
+    public void go_to_home_page() {
+        ReusableMethods.goToHomePage();
+
     }
 
 
